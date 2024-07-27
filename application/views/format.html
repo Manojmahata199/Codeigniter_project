@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aparajita Registration Form 2024</title>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datePicker.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+</head>
+
+<body>
+    <div class="container-fluid" id="grad1">
+        <div class="row justify-content-center m-0 w-100">
+            <div class="col-12 col-md-6 col-lg-4 text-center">
+                <img src="<?php echo base_url(); ?>assets/img/Aparajita_Logo_Unit_2021_White.png" width="100%" alt>
+            </div>
+            <div class="col-12 col-md-12 col-lg-9 text-center p-0 mt-0 mb-2">
+                <div class="card px-0 pt-4 pb-0 mt-0 mb-3" style="background: #ea4d55;">
+                    <p class="text-white">Fill all mandatory fields to go to next step</p>
+                    <div class="row">
+                        <div class="col-md-12 mx-0">
+                            <form id="msform" action="<?php echo base_url(); ?>aparajita-detail-store"
+                                introaction="<?php echo base_url(); ?>aparajita-detail-intro-store" method="POST"
+                                enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="6To7w0vAiAwQFar3hO66TWrWBVBEZaCRNzSBZ5cM">
+                                <div>
+                                    <ul id="progressbar" class="ps-0">
+                                        <li class="active" id="intro"><strong>Registration</strong></li>
+                                        <li class id="account"><strong>Category</strong></li>
+                                        <li id="payment"><strong>Organization Details</strong></li>
+                                        <li id="personal"><strong>Applicant Details</strong></li>
+                                        <li id="case"><strong>Insights & Experiences</strong></li>
+                                        <li id="confirm"><strong>Documents</strong></li>
+                                    </ul>
+                                </div>
+
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center">Register </h2>
+                                        <p class="text-center mt-0 d-none error-span text-danger"
+                                            style="font-size: 18px;" id="error_guest_isexists"></p>
+                                        <input type="hidden" id="alreadySubmited" name="alreadySubmited" value="0">
+                                        <div class="row justify-content-center mt-4">
+                                            <div class="col-12 col-md-8 col-lg-8">
+                                                <div class="form-group mb-2">
+                                                    <label for="name" class="form-label">Name</label><span
+                                                        class="text-danger">*</span>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_guest_name">Name is not set.</span>
+                                                    <input type="text" name="guest_name" id="guest_name"
+                                                        class="form-control" maxlength="100"
+                                                        oninput="this.value = this.value.replace(/[^a-zA-z. ]/g, '');">
+                                                </div>
+                                                <div class="form-group mb-2">
+                                                    <label for="email" class="form-label">Email</label><span
+                                                        class="text-danger">*</span>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_guest_email">Email is not set.</span>
+                                                    <input type="email" name="guest_email" id="guest_email"
+                                                        class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name" class="form-label">Phone Number</label><span
+                                                        class="text-danger">*</span>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_guest_phone">Phone is not set.</span>
+                                                    <input type="tel" maxlength="10" name="guest_phone" id="guest_phone"
+                                                        class="form-control"
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1').replace(/(\.\d\d)\d/g, '$1');">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <input type="button" value="Save & Next" name="next" id="introNextBtn"
+                                        class="next action-button" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center mb-0">Category</h2>
+                                        <p class="text-center mt-0 " style="font-size: 14px;">Please select the category
+                                            which you wish to apply for.</p>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 ">
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_literaryArts" value="literaryArts"
+                                                        checked data-text="Literary Arts">
+                                                    <input type="hidden" id="step1" name="step1" value="0">
+                                                    <input type="hidden" id="step2" name="step2" value="0">
+                                                    <input type="hidden" id="guest_user_id" name="guest_user_id" value>
+                                                    <label style=" font-size: 20px;"
+                                                        for="category_literaryArts">Literary Arts</label>
+                                                </div>
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_visualArts" value="visualArts"
+                                                        data-text="Visual Arts">
+                                                    <label style=" font-size: 20px;" for="category_visualArts">Visual
+                                                        Arts</label>
+                                                </div>
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_homeLifestyle"
+                                                        value="homeLifestyle" data-text="Home & Lifestyle">
+                                                    <label style=" font-size: 20px;" for="category_homeLifestyle">Home &
+                                                        Lifestyle</label>
+                                                </div>
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_beautyWellness"
+                                                        value="beautyWellness" data-text="Aesthetics">
+                                                    <label style=" font-size: 20px;"
+                                                        for="category_beautyWellness">Aesthetics</label>
+                                                </div>
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_communityAdvocacy"
+                                                        value="communityAdvocacy"
+                                                        data-text="Community Service and Advocacy">
+                                                    <label style=" font-size: 20px;"
+                                                        for="category_communityAdvocacy">Community Service and
+                                                        Advocacy</label>
+                                                </div>
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_managementProfessionals"
+                                                        value="managementProfessionals"
+                                                        data-text="Management professionals">
+                                                    <label style=" font-size: 20px;"
+                                                        for="category_managementProfessionals">Management
+                                                        Professionals</label>
+                                                </div>
+                                                <div class="mb-2 category">
+                                                    <input type="radio" class="me-2" style="width: 40px;"
+                                                        name="category" id="category_fashionLifestyle"
+                                                        value="fashionLifestyle" data-text="Holistic Wellness">
+                                                    <label style=" font-size: 20px;"
+                                                        for="category_fashionLifestyle">Holistic Wellness</label>
+                                                </div>
+
+
+
+
+                                            </div>
+                                            <div class="col-12 col-md-6 category-text mt-3 mt-md-0 mt-lg-0 mt-xl-0">
+                                                <span id="literaryArts" class="categoryText">Women who are writers or
+                                                    proponents of the written or spoken word, whether in literary or
+                                                    non- literary contexts. We would like to encourage submissions
+                                                    across a range of Indian languages.</span>
+                                                <span id="visualArts" style="display: none;" class="categoryText">Women
+                                                    who have excelled in the field of visual arts, which includes a
+                                                    variety of mediums ranging from photography and filmmaking to
+                                                    painting and sketching to sculpture and printmaking and more.</span>
+                                                <span id="homeLifestyle" style="display: none;"
+                                                    class="categoryText">Women who have excelled and been able to create
+                                                    models that redefine and elevate homes through silverware, linen,
+                                                    furniture, home decor and more.</span>
+                                                <span id="beautyWellness" style="display: none;"
+                                                    class="categoryText">Women who have excelled and managed to create
+                                                    brands that address gaps in the fields of skincare, fitness,
+                                                    cosmetics, and more.</span>
+                                                <span id="communityAdvocacy" style="display: none;"
+                                                    class="categoryText">Women who have excelled and managed to create a
+                                                    positive impact in their communities by addressing social and
+                                                    systemic barriers. </span>
+                                                <span id="managementProfessionals" style="display: none;"
+                                                    class="categoryText">Women who have excelled and made significant
+                                                    contributions in their organizations in the corporate sector.</span>
+                                                <span id="fashionLifestyle" style="display: none;"
+                                                    class="categoryText">Women who have excelled in the art of
+                                                    spiritual, emotional and mental healing using tradional practises
+                                                    and the power of suggestion.</span>
+
+                                            </div>
+                                            <h2 class="fs-title text-center">Years of Experience</h2>
+                                            <div class="row">
+                                                <div class="col-12 mb-4">
+
+                                                    <div class="mb-2">
+                                                        <input type="radio" class="me-2" style="width: 40px;"
+                                                            name="you_shine" id="you_shine_u10" value="under10">
+                                                        <label style=" font-size: 20px;" for="you_shine_u10" class>You
+                                                            Shine (5 to 10 years)</label>
+                                                    </div>
+                                                    <div class>
+                                                        <input type="radio" class="me-2" style="width: 40px;"
+                                                            name="you_shine" id="you_shine_m10" value="over10">
+                                                        <label style=" font-size: 20px;" for="you_shine_m10" class>You
+                                                            Inspire (More than 10 years)</label>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <input type="button" value="Previous" name="previous"
+                                        class="previous action-button-previous" />
+                                    <input type="button" value="Save & Next" name="next"
+                                        class="next action-button account" id="catExpBtn" />
+                                </fieldset>
+                                <fieldset>
+                                    <input type="hidden" id="step3" name="step3" value="0">
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center">Organization Details</h2>
+                                        <div class="row">
+                                            <div class="col-12 col-md-12 col-lg-12">
+                                                <div>
+                                                    <label for class="form-label">Organization's Name<span
+                                                            class="text-danger">*</span></label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_org-name">Organization name is not set.</span>
+                                                    <input class="form-control" type="text" name="org_name"
+                                                        id="org-name" value maxlength="100">
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <label for class="form-label">Your Designation and Department<span
+                                                            class="text-danger">*</span></label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_designation">Designation and Department is not
+                                                        set.</span>
+                                                    <input class="form-control" type="text" name="designation"
+                                                        id="designation" value maxlength="255">
+
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">Type of Organization</label>
+
+                                                    <select onfocus="this.size=8;" onblur="this.size=0;"
+                                                        onchange="this.size=1; this.blur();" class="form-select mb-4"
+                                                        id="company_incorporation_is" name="company_incorporation_is">
+                                                        <option value>Choose</option>
+                                                        <option value="Individual">Individual</option>
+                                                        <option value="Sole Proprietorship">Sole Proprietorship</option>
+                                                        <option value="Partnership">Partnership</option>
+                                                        <option value="Private Limited">Private Limited</option>
+                                                        <option value="Limited Liability Company">Limited Liability
+                                                            Company</option>
+                                                        <option value="Limited Company">Limited Company</option>
+                                                        <option value="Others">Others</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">Date of Formation<span
+                                                            class="text-danger">*</span></label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_company-incorporation-date">Incorporation date is not
+                                                        set.</span>
+                                                    <input class="form-control" type="text"
+                                                        name="company_incorporation_date"
+                                                        id="company-incorporation-date" value Placeholder="dd/mm/yyyy">
+
+                                                </div>
+
+                                                <div>
+                                                    <label for class="form-label">Total Years of Work Experience as on
+                                                        March 31, 2023<span class="text-danger">*</span></label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_year-experience">Years of work experience is not
+                                                        set.</span>
+                                                    <input class="form-control allow-only-number" type="text" min="0"
+                                                        name="year_experience" id="year-experience" value maxlength="2"
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-12 col-lg-12">
+                                                <h2 class="fs-title text-center">Contact Details of your Organization
+                                                </h2>
+                                                <div>
+                                                    <label for class="form-label">Address</label>
+                                                    <textarea name="org_address" id="org-address" cols="30" rows="1"
+                                                        class="form-control" value></textarea>
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">City</label>
+                                                    <input type="text" class="form-control" name="org_city"
+                                                        id="org-city" value maxlength="100">
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">State</label>
+                                                    <input type="text" class="form-control" name="org_state"
+                                                        id="org-state" value maxlength="100">
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">Pin Code</label>
+                                                    <input type="tel" maxlength="6" inputmode="numeric"
+                                                        class="form-control allow-only-number pin-digit" name="org_pin"
+                                                        id="org-pin" value>
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+                                                    <span id="pin-error" style="display: none; color:red;">Please enter
+                                                        6 digit</span>
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">Email ID</label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_org-email">Invalid Email ID.</span>
+                                                    <input type="text" class="form-control email-pattern"
+                                                        name="org_email" id="org-email" value maxlength="100">
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">Contact Number</label>
+                                                    <input type="tel" class="form-control" name="org_contactno"
+                                                        id="org-contactno" value maxlength="10"
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1').replace(/(\.\d\d)\d/g, '$1');">
+                                                    <div class="invalid-feedback">
+                                                        Input required
+                                                    </div>
+
+                                                </div>
+                                                <div class="mb-4">
+                                                    <label for class="form-label">Organization’s Social Media link <span
+                                                            style="font-size: 14px;">(click on choose again to fill
+                                                            multiple options)</span></label>
+
+
+                                                    <select onfocus="this.size=5;" onblur="this.size=0;"
+                                                        onchange="this.size=1; this.blur();" class="form-select mb-4"
+                                                        id="digital-presence" name="digital_presence">
+                                                        <option value>Choose</option>
+                                                        <option value="LinkedIn">LinkedIn</option>
+                                                        <option value="Facebook">Facebook</option>
+                                                        <option value="Twitter">Twitter</option>
+                                                        <option value="Instagram">Instagram</option>
+                                                    </select>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_dp-linkedin">Invalid url format.</span>
+                                                    <input type="text" class="form-control show_LinkedIn mb-1"
+                                                        name="dp_linkedin" id="dp-linkedin" value maxlength="255"
+                                                        placeholder="LinkedIn" style="display:none">
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_dp-facebook">Invalid url format.</span>
+                                                    <input type="text" class="form-control show_Facebook mb-1"
+                                                        name="dp_facebook" id="dp-facebook" value maxlength="255"
+                                                        placeholder="Facebook" style="display:none">
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_dp-twitter">Invalid url format.</span>
+                                                    <input type="text" class="form-control show_Twitter mb-1"
+                                                        name="dp_twitter" id="dp-twitter" value maxlength="255"
+                                                        placeholder="Twitter" style="display:none">
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_dp-instagram">Invalid url format.</span>
+                                                    <input type="text" class="form-control show_Instagram mb-1"
+                                                        name="dp_instagram" id="dp-instagram" value maxlength="255"
+                                                        placeholder="Instagram" style="display:none">
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label">Organization’s Official
+                                                        Website</label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_org-website">Invalid url format.</span>
+                                                    <input type="text" class="form-control" name="org_website"
+                                                        id="org-website" value maxlength="255" placeholder>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <input type="button" value="Previous" name="previous"
+                                        class="previous action-button-previous" />
+                                    <input type="button" value="Save & Next" name="next"
+                                        class="next action-button organization-details" id="orgDetId" />
+                                </fieldset>
+                                <fieldset>
+                                    <input type="hidden" id="step4" name="step4" value="0">
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center">Applicant Information</h2>
+                                        <div class="row">
+                                            <div class="col-12 ">
+                                                <label for class="form-label">Applicant's Name<span
+                                                        class="text-danger">*</span></label>
+                                                <span class="text-danger d-none error-span"
+                                                    id="error_applicant-name">Name is not set.</span>
+                                                <input type="text" class="form-control allow-only-alphabet-name"
+                                                    name="applicant_name" id="applicant-name" value maxlength="100"
+                                                    oninput="this.value = this.value.replace(/[^a-zA-z. ]/g, '');">
+
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for class="form-label">Date of Birth<span
+                                                        class="text-danger">*</span></label>
+                                                <span class="text-danger d-none error-span" id="error_dob">Dob is not
+                                                    set.</span>
+                                                <input type="text" class="form-control" name="dob" id="dob" value
+                                                    Placeholder="dd/mm/yyyy">
+
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for class="form-label">Applicant’s Mobile Number<span
+                                                        class="text-danger">*</span></label>
+                                                <span class="text-danger d-none error-span" id="error_mobile">Mobile is
+                                                    not set.</span>
+                                                <input type="tel" maxlength="10" class="form-control" name="mobile"
+                                                    id="mobile" value
+                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1').replace(/(\.\d\d)\d/g, '$1');">
+
+
+                                            </div>
+                                            <div class="col-12">
+                                                <label for class="form-label">Applicant’s Email ID<span
+                                                        class="text-danger">*</span></label>
+                                                <span class="text-danger d-none error-span" id="error_email-id">Email is
+                                                    not set.</span>
+                                                <input type="text" class="form-control" name="email_id" id="email-id"
+                                                    value maxlength="100">
+
+
+                                            </div>
+
+                                            <div class="col-12 ">
+                                                <label for class="form-label">LinkedIn profile link</label>
+                                                <span class="text-danger d-none error-span"
+                                                    id="error_linkedin-profile">Invalid linkedIn profile link.</span>
+                                                <input type="text" class="form-control " name="linkedin_profile"
+                                                    id="linkedin-profile" value maxlength="100">
+
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for class="form-label">Write a brief bio about your role and the
+                                                    work you do and why it excites you. Feel free to include any
+                                                    initiatives you’ve headed or ideated that you’re particularly proud
+                                                    of or how you feel like you’ve carved a niche for yourself. We want
+                                                    to know more about your work- from your lens, not the
+                                                    world’s.</label>
+                                                <textarea class="form-control" name="your_role" id="your-role" cols="30"
+                                                    rows="1" value maxlength="255"></textarea>
+                                            </div>
+                                            <div class="col-12 ">
+                                                <label for class="form-label">If you feel like you could articulate your
+                                                    ideas and your response better in the form of a video, feel free to
+                                                    do that too! <span style="font-size: 14px;">(Format - Mp4, Max size
+                                                        - 10 MB)</span></label>
+                                                <span class="text-danger d-none error-span" id="error_bio-video">Invalid
+                                                    video format.</span>
+                                                <input type="file" class="form-control submit-enable" name="bio_video"
+                                                    id="bio-video">
+                                            </div>
+                                            <div class="col-12 col-md-12 col-lg-12">
+
+                                                <h2 class="fs-title mb-3 text-center">Past Companies Worked With (If
+                                                    Any)</h2>
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <label for>Name of the Organization</label>
+                                                        <input type="text" name="past_organization_name[]"
+                                                            id="past-organization-name1" class="form-control"
+                                                            maxlength="100">
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <label for>Years of Association with the Organization</label>
+                                                        <input type="text" min="0" name="past_experience[]"
+                                                            id="past-experience1" class="form-control allow-only-number"
+                                                            maxlength="2"
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-12 col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <label for>Name of the Organization</label>
+                                                        <input type="text" name="past_organization_name[]"
+                                                            id="past-organization-name2" class="form-control"
+                                                            maxlength="100">
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <label for>Years of Association with the Organization</label>
+                                                        <input type="text" min="0" name="past_experience[]"
+                                                            id="past-experience2" class="form-control allow-only-number"
+                                                            maxlength="2"
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-12 col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <label for>Name of the Organization</label>
+                                                        <input type="text" name="past_organization_name[]"
+                                                            id="past-organization-name3" class="form-control"
+                                                            maxlength="100">
+                                                    </div>
+                                                    <div class="col-12 col-md-6 col-lg-6">
+                                                        <label for>Years of Association with the Organization</label>
+                                                        <input type="text" min="0" name="past_experience[]"
+                                                            id="past-experience3" class="form-control allow-only-number"
+                                                            maxlength="2"
+                                                            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                    <input type="button" value="Previous" name="previous"
+                                        class="previous action-button-previous" />
+                                    <input type="button" value="Save & Next" name="next"
+                                        class="next action-button applicant-details" id="aplDetId" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <input type="hidden" id="step5" name="step5" value="0">
+                                        <h2 class="fs-title text-center my-0">Insights & Experiences</h2>
+                                        <p class="text-center mt-0 " style="font-size: 14px;" id="answeringOne">
+                                            (Answering one question is mandatory)</p>
+                                        <div class="row">
+                                            <div class="col-12">
+
+                                                <div>
+                                                    <label for class="form-label d-flex">
+                                                        <div class="me-1">
+                                                            1.
+                                                        </div>
+                                                        <div>
+                                                            “Always be kinder than necessary” - James Bary
+                                                            </br>What are your thoughts or Experiences regarding the
+                                                            same? <span style="font-size: 14px;">(Word Limit- 200
+                                                                words)</span>
+                                                        </div>
+                                                    </label>
+                                                    <textarea class="form-control" name="your_thoughts"
+                                                        id="your-thoughts" cols="30" rows="1" value
+                                                        maxlength="400"></textarea>
+                                                </div>
+                                                <div>
+                                                    <label for class="form-label d-flex">
+                                                        <div class="me-1">2.</div>
+                                                        <div>
+                                                            As an institution and a community, we strongly believe in
+                                                            the importance of women supporting other women, especially
+                                                            when we are surrounded by systems and societies that are not
+                                                            designed for us. How have you supported or encouraged the
+                                                            women around you? <span style="font-size: 14px;">(Word
+                                                                Limit- 300 words)</span>
+                                                        </div>
+                                                    </label>
+                                                    <textarea class="form-control" name="womans_crown" id="womans-crown"
+                                                        cols="30" rows="1" value maxlength="600"></textarea>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <input type="button" value="Previous" name="previous"
+                                        class="previous action-button-previous" />
+                                    <input type="button" value="Save & Next" name="next"
+                                        class="next action-button insightExpNext" id="qsnFieldId" />
+                                </fieldset>
+                                <fieldset>
+                                    <input type="hidden" id="step6" name="step6" value="0">
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center">Documents to be Uploaded</h2>
+                                        <p class="text-center mt-0 " style="font-size: 14px;">Please attach the required
+                                            documents below to substantiate your application.</p>
+                                        <p class="text-center mt-0 " style="font-size: 14px;">(Maximum 8 MB per file)
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div>
+                                                    <label for class="form-label">
+                                                        A high-resolution passport-sized photo that is not older than a
+                                                        year <span style="font-size: 14px;">(only .jpg, .jpeg, .png,
+                                                            .pdf)</span><span class="text-danger">*</span>
+                                                    </label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_support-entry">Upload photo</span>
+                                                    <input type="file" class="form-control submit-enable"
+                                                        name="support_entry" id="support-entry">
+                                                </div>
+
+
+                                                <div>
+                                                    <label for class="form-label">
+                                                        Please list any significant awards or honours you’ve received
+                                                        <span style="font-size: 14px;">(only .docs)</span>
+                                                    </label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_awards-recognition">Invalid File Format.</span>
+                                                    <input type="file" class="form-control submit-enable"
+                                                        name="awards_recognition" id="awards-recognition">
+                                                </div>
+
+
+                                                <div>
+                                                    <label for class="form-label">
+                                                        Letter from the organization stating your duration and
+                                                        designation as on March 31, 2023 <span
+                                                            style="font-size: 14px;">(.jpg, .jpeg, .pdf, .png, .doc,
+                                                            and/or .docx only)</span>
+                                                    </label>
+                                                    <span class="text-danger d-none error-span"
+                                                        id="error_letter-from-organization">Invalid File Format.</span>
+                                                    <input type="file" class="form-control submit-enable"
+                                                        name="letter_from_organization" id="letter-from-organization">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <input type="button" value="Previous" name="previous"
+                                        class="previous action-button-previous" />
+                                    <input type="button" value="Save & Next" name="next"
+                                        class="next action-button uploadNextBtn" onclick="allCheckConfirm()"
+                                        id="upldNextbtn" />
+
+
+                                </fieldset>
+                                <fieldset>
+                                    <input type="hidden" id="step7" name="step7" value="0">
+                                    <div class="form-card">
+                                        <h2 class="fs-title text-center mb-3">Check & Confirm</h2>
+                                        <div class>
+                                            <div class="row mb-2" id="divToPrint">
+                                                <div class="col-12 col-md-6 col-lg-4 text-center " id="printLogo123"
+                                                    style="display: none; text-align: center;">
+                                                    <img src="https://aparajita.sanmarg.in/assets/images/Aparajita_Logo_Unit_2021_White.png"
+                                                        width="300px" style="margin:0px auto ; " alt>
+                                                </div>
+                                                <div class="col-12">
+                                                    <p class="mb-0" id></p>
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Introduction</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Name</td>
+                                                                <td id="text_guest_name"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Email</td>
+                                                                <td id="text_guest_email"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Phone No.</td>
+                                                                <td id="text_guest_phone"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <p class="mb-0"></p>
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Category</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Category</td>
+                                                                <td id="text_category"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Years of Experience</td>
+                                                                <td id="text_you_shine"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Organization Details</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Organization's Name </td>
+                                                                <td id="text_org_name"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Your Designation and Department</td>
+                                                                <td id="text_designation"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Type of Organization</td>
+                                                                <td id="text_company_incorporation_is"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Date of Formation</td>
+                                                                <td id="text_company_incorporation_date"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Total Years of Work Experience as on March 31, 2023
+                                                                </td>
+                                                                <td id="text_year_experience"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Address</td>
+                                                                <td id="text_org_address"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>City</td>
+                                                                <td id="text_org_city"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>State</td>
+                                                                <td id="text_org_state"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Pin Code</td>
+                                                                <td id="text_org_pin"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Email ID</td>
+                                                                <td id="text_org_email"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Organization’s Social Media link</td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Organization’s Official Website</td>
+                                                                <td id="text_org_website"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Application Details</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Applicant's Name</td>
+                                                                <td id="text_applicant_name"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Date of Birth</td>
+                                                                <td id="text_dob"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Applicant’s Mobile Number</td>
+                                                                <td id="text_mobile"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Applicant’s Email ID</td>
+                                                                <td id="text_email_id"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Linkedin Profile Link</td>
+                                                                <td id="text_linkedin_profile"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Write a brief bio about your role and the work you
+                                                                    do and why it excites you.</td>
+                                                                <td id="text_your_role"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>If you feel like you could articulate your ideas and
+                                                                    your response better in the form of a video, feel
+                                                                    free to do that too!</td>
+                                                                <td id="text_bio_video"></td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Past Companies Worked With</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><strong>Name of the Organization</strong></td>
+                                                                <td><strong>Years of Association with the
+                                                                        Organization</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td id="text_past_organization_name1"></td>
+                                                                <td id="text_past_experience1"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td id="text_past_organization_name2"></td>
+                                                                <td id="text_past_experience2"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td id="text_past_organization_name3"></td>
+                                                                <td id="text_past_experience3"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Insights & Experiences</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1. “Always be kinder than necessary” - James Bary
+                                                                    </br> What are your thoughts or experiences
+                                                                    regarding the same?</td>
+                                                                <td id="text_your_thoughts"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2. As an institution and a community, we strongly
+                                                                    believe in the importance of women supporting other
+                                                                    women, especially when we are surrounded by systems
+                                                                    and societies that are not designed for us. How have
+                                                                    you supported or encouraged the women around you?
+                                                                </td>
+                                                                <td id="text_womans_crown"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <table border
+                                                        style="border-collapse: collapse; width: 100%; margin-bottom: 15px;"
+                                                        class="table table-responsive">
+                                                        <thead style="background: #ea4d55;">
+                                                            <tr>
+                                                                <th>Documents to be Uploaded</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>A high-resolution passport-sized photo that is not
+                                                                    older than a year</td>
+                                                                <td id="text_support_entry"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Please list any significant awards or honours you’ve
+                                                                    received</td>
+                                                                <td id="text_awards_recognition"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Letter from the organization stating your duration
+                                                                    and designation</td>
+                                                                <td id="text_letter_from_organization"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <h2 class="fs-title text-center">Declaration</h2>
+                                            </div>
+                                            <div class="col-12 form-check">
+                                                <input type="checkbox" class="submit-enable form-check-input"
+                                                    style=" width: 15px !important; height: 15px !important; border: 1px solid #ccc !important;"
+                                                    name id="checkbxstatus" onclick="terms_condition_check()">
+                                                <label for="checkbxstatus">
+                                                    I confirm that the information provided is complete, accurate and
+                                                    true to my knowledge. If any details/information found to be
+                                                    incorrect, then jury shall reserves right to disqualify my entry.
+                                                </label>
+                                            </div>
+                                            <div class="col-12 form-check mt-2">
+                                                <input type="checkbox" class="submit-enable form-check-input"
+                                                    style=" width: 15px !important; height: 15px !important; border: 1px solid #ccc !important;"
+                                                    name id="terms" required>
+                                                <label for="terms">
+                                                    I accept all <a href="javascript:void(0);">terms and conditions</a>.
+                                                </label>
+                                            </div>
+                                            <span id="terms-error" style="display: none; color:red;">Please accept
+                                                declaration</span>
+                                            <div class="col-6 offset-6 mt-4 text-end">
+                                                <Label class="fs-6 text-dark fw-bold" for="signature"
+                                                    style="cursor: pointer; "><u>Click Here to Upload Your
+                                                        Signature</u><span class="text-danger">*</span> </Label>
+                                                <input type="file" name="signature" class="form-control d-none"
+                                                    id="signature">
+                                                <span id="upload-signature-error"
+                                                    style="display: none; color:red;">Please upload your digital
+                                                    signature</span>
+                                            </div>
+                                        </div>
+                                        <div class="logoSlider">
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                            <ul class="ps-0 d-flex align-items-center id_ListOfLi">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <input type="button" value="Previous" name="previous"
+                                        class="previous action-button-previous" />
+                                    <button type="submit" id="submit-form" name="submit"
+                                        class="action-button">Submit</button><br>
+                                    <button type="button" id="print-form" class="action-button"
+                                        onclick="PrintDiv();">Print</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function PrintDiv() {
+
+            $("#printLogo123").css("display", "block !important");
+            document.getElementById("printLogo123").style.display = "block";
+            var divToPrint = document.getElementById('divToPrint');
+            var popupWin = window.open('', '_blank');
+
+            popupWin.document.open();
+            popupWin.document.write('<html><body onload="window.print()">' + divToPrint.innerHTML + '</html>');
+            popupWin.document.close();
+        }
+
+        $(document).ready(function () {
+            $(window).scrollTop(0);
+        });
+
+        $(".next").click(function () {
+            $(window).scrollTop(0);
+        });
+
+        $(".previous").click(function () {
+            $(window).scrollTop(0);
+        });
+
+        $.ajax({
+            // url: "http://aparajita.sanmarg.in/assets/helper/getFileCount.php",
+            url: "<?php echo base_url(); ?>assets/helper/getFileCount.php",
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                //$('#fileCount').text('Number of files in folder: ' + response);
+                var html = "";
+                var fileCount = response.count;
+                var fileNames = response.names;
+                //    for(var i = 0; i< response; i++)
+                //    {
+                //   //  html+='<li><img src="http://aparajita.sanmarg.in/aparajita-detail-store" alt=""></li>'
+                //    }
+
+                $('.id_ListOfLi').empty();
+                // for (var i = 0; i < fileCount; i++) {
+                //     $('<li>').text(fileNames[i]).appendTo('#id_ListOfLi');
+                // }
+                for (var i = 2; i < fileCount; i++) {
+                    var url = "http://aparajita.sanmarg.in/assets/images/sponsors-logo/" + fileNames[i];
+                    //alert(url);
+                    html += '<li><img src="' + url + '" ></li>';
+                }
+                $('.id_ListOfLi').html(html);
+
+            },
+            error: function () {
+                console.log('An error occurred');
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery.validate.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/common.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeYear: true,
+                changeMonth: true,
+                // yearRange: "1991:2023"
+                yearRange: "100:+0",
+            });
+        });
+
+        $(function () {
+            $(".yearSelect").datepicker({
+                dateFormat: "yy",
+                showMonth: false,
+                // yearRange: "-50:+0",
+
+
+            });
+
+
+        });
+
+    </script>
+    <script>(function () { if (!document.body) return; var js = "window['__CF$cv$params']={r:'87c7c371be1a3f69',t:'MTcxNDQ4MjUzOC40OTEwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);"; var _0xh = document.createElement('iframe'); _0xh.height = 1; _0xh.width = 1; _0xh.style.position = 'absolute'; _0xh.style.top = 0; _0xh.style.left = 0; _0xh.style.border = 'none'; _0xh.style.visibility = 'hidden'; document.body.appendChild(_0xh); function handler() { var _0xi = _0xh.contentDocument || _0xh.contentWindow.document; if (_0xi) { var _0xj = _0xi.createElement('script'); _0xj.innerHTML = js; _0xi.getElementsByTagName('head')[0].appendChild(_0xj); } } if (document.readyState !== 'loading') { handler(); } else if (window.addEventListener) { document.addEventListener('DOMContentLoaded', handler); } else { var prev = document.onreadystatechange || function () { }; document.onreadystatechange = function (e) { prev(e); if (document.readyState !== 'loading') { document.onreadystatechange = prev; handler(); } }; } })();</script>
+</body>
+
+</html>
